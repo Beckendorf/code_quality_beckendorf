@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="junit.framework.TestSuite$1" tests="1" skipped="0" failures="1" errors="0" timestamp="2018-03-02T14:32:16" hostname="MSI" time="0.003">
+<testsuite name="junit.framework.TestSuite$1" tests="1" skipped="0" failures="1" errors="0" timestamp="2018-03-02T15:15:16" hostname="MSI" time="0.006">
   <properties/>
-  <testcase name="warning" classname="junit.framework.TestSuite$1" time="0.003">
+  <testcase name="warning" classname="junit.framework.TestSuite$1" time="0.006">
     <failure message="junit.framework.AssertionFailedError: No tests found in Tests" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: No tests found in Tests
 	at junit.framework.Assert.fail(Assert.java:57)
 	at junit.framework.TestCase.fail(TestCase.java:227)

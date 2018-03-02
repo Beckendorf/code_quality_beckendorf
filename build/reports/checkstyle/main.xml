@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="8.0">
 <file name="D:\code_quality\code_quality_beckendorf\src\main\java\LinkedList.java">
-<error line="1" column="25" severity="error" message="Class type name &apos;TypeOfData&apos; must match pattern &apos;(^[A-Z][0-9]?)$|([A-Z][a-zA-Z0-9]*[T]$)&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ClassTypeParameterNameCheck"/>
-<error line="6" column="26" severity="error" message="Class type name &apos;TypeOfData&apos; must match pattern &apos;(^[A-Z][0-9]?)$|([A-Z][a-zA-Z0-9]*[T]$)&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ClassTypeParameterNameCheck"/>
 </file>
-<file name="D:\code_quality\code_quality_beckendorf\src\main\java\main.java">
-<error line="1" column="14" severity="error" message="Type name &apos;main&apos; must match pattern &apos;^[A-Z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.TypeNameCheck"/>
-<error line="3" column="24" severity="error" message="Method Name &apos;main&apos; must not equal the enclosing class name." source="com.puppycrawl.tools.checkstyle.checks.naming.MethodNameCheck"/>
+<file name="D:\code_quality\code_quality_beckendorf\src\main\java\Main.java">
 </file>
 </checkstyle>

@@ -1,15 +1,15 @@
-public class LinkedList<TypeOfData> {
+public class LinkedList<T> {
 
     private int size;
-    private Element<TypeOfData> element;
+    private Element<T> element;
 
-    public class Element<TypeOfData> {
+    public class Element<T> {
 
-        private TypeOfData dataOfElement;
-        private Element<TypeOfData>  nextElement;
-        private Element<TypeOfData>  previousElement;
+        private T dataOfElement;
+        private Element<T>  nextElement;
+        private Element<T>  previousElement;
 
-        public Element(TypeOfData dataGiven){
+        public Element(T dataGiven){
             this.dataOfElement = dataGiven;
             this.nextElement = null;
             this.previousElement = null;
@@ -37,7 +37,7 @@ public class LinkedList<TypeOfData> {
         }
     }
 
-    private void goToPositionnedElementWithData(TypeOfData dataGiven) {
+    private void goToPositionnedElementWithData(T dataGiven) {
         for (int i = 1; i < numberTotalOfElements() && this.element.nextElement != null; i++) {
             if (!(this.element.dataOfElement.equals(dataGiven)))
                 this.element = this.element.nextElement;
@@ -56,28 +56,28 @@ public class LinkedList<TypeOfData> {
         return (this.size);
     }
 
-    public void addTheFirstData(TypeOfData dataToPlace) {
+    public void addTheFirstData(T dataToPlace) {
         this.element = new Element<>(dataToPlace);
         this.size++;
     }
 
-    public void addAtFirstPosition(TypeOfData dataToPlace) {
+    public void addAtFirstPosition(T dataToPlace) {
         if (isEmpty())
             addTheFirstData(dataToPlace);
         else {
-            Element<TypeOfData> newElementToAdd = new Element<>(dataToPlace);
+            Element<T> newElementToAdd = new Element<>(dataToPlace);
             newElementToAdd.nextElement = this.element;
             this.element.previousElement = newElementToAdd;
             this.size++;
         }
     }
 
-    public void addAtLastPosition(TypeOfData dataToPlace) {
+    public void addAtLastPosition(T dataToPlace) {
         if (isEmpty())
             addTheFirstData(dataToPlace);
         else {
-            Element<TypeOfData> newElementToAdd = new Element<>(dataToPlace);
-            Element<TypeOfData> actualLastElement = giveLastElement();
+            Element<T> newElementToAdd = new Element<>(dataToPlace);
+            Element<T> actualLastElement = giveLastElement();
             actualLastElement.nextElement = newElementToAdd;
             newElementToAdd.previousElement = actualLastElement;
             comeBackToFirstElement();
@@ -85,7 +85,7 @@ public class LinkedList<TypeOfData> {
         }
     }
 
-    public void addAtGivenPosition(TypeOfData dataToPlace, int positionGiven) {
+    public void addAtGivenPosition(T dataToPlace, int positionGiven) {
         if (isEmpty())
             addTheFirstData(dataToPlace);
         else {
@@ -95,7 +95,7 @@ public class LinkedList<TypeOfData> {
                 addAtLastPosition(dataToPlace);
             else {
                 goToPositionnedElementWithPosition(positionGiven);
-                Element<TypeOfData> newElementToAdd = new Element<>(dataToPlace);
+                Element<T> newElementToAdd = new Element<>(dataToPlace);
                 newElementToAdd.previousElement = this.element;
                 if (this.element.nextElement != null) {
                     newElementToAdd.nextElement = this.element.nextElement;
@@ -114,30 +114,30 @@ public class LinkedList<TypeOfData> {
         comeBackToFirstElement();
     }
 
-    public void removeAtGivenElement(TypeOfData dataToRemove) {
+    public void removeAtGivenElement(T dataToRemove) {
         goToPositionnedElementWithData(dataToRemove);
         this.element.previousElement.nextElement = this.element.nextElement;
         this.element.nextElement.previousElement = this.element.previousElement;
         comeBackToFirstElement();
     }
 
-    public Element<TypeOfData> giveElementAsked(TypeOfData dataAsked) {
+    public Element<T> giveElementAsked(T dataAsked) {
         goToPositionnedElementWithData(dataAsked);
-        Element<TypeOfData> elementFound = this.element;
+        Element<T> elementFound = this.element;
         comeBackToFirstElement();
         return (elementFound);
     }
 
-    public Element<TypeOfData> giveFirstElement() {
+    public Element<T> giveFirstElement() {
         comeBackToFirstElement();
         return (this.element);
     }
 
-    public Element<TypeOfData> giveLastElement() {
+    public Element<T> giveLastElement() {
         while (this.element.nextElement != null) {
             this.element = this.element.nextElement;
         }
-        Element<TypeOfData> lastElement = this.element;
+        Element<T> lastElement = this.element;
         comeBackToFirstElement();
         return (lastElement);
     }
